@@ -1,17 +1,17 @@
-public class BubbleSort implements SortingStrategy {
-
+class BubbleSort implements SortingStrategy {
     @Override
-    public void sort(int[] arr) {
-        int n = arr.length;
-        int i, j;
-        for (i = 0; i < n - 1; i++) {
-            for (j = 0; j < n - i - 1; j++) {
-                if (arr[j] > arr[j + 1]) {
-                    int temp = arr[j];
-                    arr[j] = arr[j + 1];
-                    arr[j + 1] = temp;
+    public int[] sort(int[] array) {
+        int n = array.length;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (array[j] > array[j + 1]) {
+                    // swap temp and arr[i]
+                    int temp = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = temp;
                 }
             }
         }
+        return array;
     }
 }
